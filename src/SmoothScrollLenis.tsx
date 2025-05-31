@@ -7,11 +7,11 @@ import {
 } from "framer-motion";
 import { FiHeart } from "react-icons/fi";
 import { useRef } from "react";
-import img1 from './images/img1.jpg'
-import img2 from './images/img2.jpg'
-import img3 from './images/img3.jpg'
-import img4 from './images/img4.jpg'
-import img5 from './images/img5.png'
+import img1 from './images/img1.JPG'
+import img2 from './images/img2.JPG'
+import img3 from './images/img3.JPG'
+import img4 from './images/img4.JPG'
+import img5 from './images/img5.PNG'
 
 export const SmoothScrollHero = () => {
   return (
