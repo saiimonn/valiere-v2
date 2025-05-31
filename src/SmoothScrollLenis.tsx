@@ -5,8 +5,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { SiSpacex } from "react-icons/si";
-import { FiArrowRight, FiMapPin } from "react-icons/fi";
+import { FiHeart } from "react-icons/fi";
 import { useRef } from "react";
 import img1 from './images/img1.jpg'
 import img2 from './images/img2.jpg'
@@ -34,7 +33,7 @@ export const SmoothScrollHero = () => {
 const Nav = () => {
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-3 text-white">
-      <SiSpacex className="text-3xl mix-blend-difference" />
+      <FiHeart className="text-3xl mix-blend-difference" />
       <button
         onClick={() => {
           document.getElementById("launch-schedule")?.scrollIntoView({
@@ -43,7 +42,7 @@ const Nav = () => {
         }}
         className="flex items-center gap-1 text-xs text-zinc-400"
       >
-        LAUNCH SCHEDULE <FiArrowRight />
+        6 MONTHS OF US
       </button>
     </nav>
   );
@@ -116,21 +115,21 @@ const ParallaxImages = () => {
         alt="An example of a space launch"
         start={200}
         end={-250}
-        className="mx-auto lg:w-1/4 w-1/3"
+        className="mx-auto lg:w-1/4 md:1/5 w-1/3"
       />
       <ParallaxImg
         src= {img3}
         alt="Orbiting satellite"
         start={-200}
         end={200}
-        className="ml-auto lg:w-1/8 w-1/3"
+        className="ml-auto lg:w-1/8 md:w-1/4 w-1/3"
       />
       <ParallaxImg
         src= {img4}
         alt="Orbiting satellite"
         start={0}
         end={-500}
-        className="ml-24 lg:w-5/12 w-1/2"
+        className="ml-24 lg:w-5/12 md:1/4 w-1/2"
       />
     </div>
   );
@@ -175,47 +174,47 @@ const Schedule = () => {
       id="launch-schedule"
       className="mx-auto max-w-5xl px-4 py-48 text-white"
     >
-      <motion.h1
-        initial={{ y: 48, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ ease: "easeInOut", duration: 0.75 }}
-        className="mb-20 text-4xl font-black uppercase text-zinc-50"
-      >
-        Launch Schedule
-      </motion.h1>
-      <ScheduleItem title="NG-21" date="Dec 9th" location="Florida" />
-      <ScheduleItem title="Starlink" date="Dec 20th" location="Texas" />
-      <ScheduleItem title="Starlink" date="Jan 13th" location="Florida" />
-      <ScheduleItem title="Turksat 6A" date="Feb 22nd" location="Florida" />
-      <ScheduleItem title="NROL-186" date="Mar 1st" location="California" />
-      <ScheduleItem title="GOES-U" date="Mar 8th" location="California" />
-      <ScheduleItem title="ASTRA 1P" date="Apr 8th" location="Texas" />
+    <Message />
+
     </section>
   );
 };
 
-interface ScheduleItemProps {
-  title: string;
-  date: string;
-  location: string;
-}
+const Message = () => {
+    return <div className = "space-y-4">
+        <motion.h1 className = "font-medium lg:text-5xl md:text-3xl text-2xl">To my dearest Eri,</motion.h1>
 
-const ScheduleItem = ({ title, date, location }: ScheduleItemProps) => {
-  return (
-    <motion.div
-      initial={{ y: 48, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ ease: "easeInOut", duration: 0.75 }}
-      className="mb-9 flex items-center justify-between border-b border-zinc-800 px-3 pb-9"
-    >
-      <div>
-        <p className="mb-1.5 text-xl text-zinc-50">{title}</p>
-        <p className="text-sm uppercase text-zinc-500">{date}</p>
-      </div>
-      <div className="flex items-center gap-1.5 text-end text-sm uppercase text-zinc-500">
-        <p>{location}</p>
-        <FiMapPin />
-      </div>
-    </motion.div>
-  );
-};
+        <motion.p className = "font-light lg:text-2xl md:text-xl sm:text-lg text-justify">
+            Before I met you, I was a wreck; A self-destructive, antisocial, wrathful, and sensitive shell of a man who was the product of the people who had hurt him.
+            I was at my lowest, I was close to accepting the idea that I wouldn't be able to have someone whom I would share my joys and sorrows with, as I have been told.
+
+            <br /><br />
+            Then I met you.
+
+            <br /><br />
+            Within the past 6 months you have shown me what it's like to be loved unconditionally, to stick with me throughout my challenges and achievements, and to share a laugh with me.
+
+            <br /> <br />
+            Within the past 6 months you have shown me the kind of love that I never thought I would receive from someone. You've proven that there is someone who can love me and accept me for who I am.
+
+            <br /> <br />
+            You have lit up my life the same way as you light up the room with your presence. You have made me laugh more times than I can count. And you've always believed in me when I don't even believe in myself.
+
+            <br /> <br />
+            Thank you.
+
+            <br /> <br />
+            Thank you for loving me. Thank you for always sticking by my side. Thank you for supporting me. And thank you for always making me laugh.
+             
+            <br /> <br />
+            I promise to love you everyday. I promise to always be with you. I promise to support you in everything you do. And I promise that I will never stop making you laugh.
+
+            <br /> <br />
+            It's you and it will be you, today, tomorrow, and always. I love you my dear Eri, you complete me.
+        </motion.p>
+
+        <motion.p className = "mt-20 font-light lg:text-2xl md:text-xl sm:text-lg text-right">
+            Love, Sai
+        </motion.p>
+    </div>
+}
